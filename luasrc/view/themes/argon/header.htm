@@ -14,7 +14,7 @@
 
 	MUI:
 	https://github.com/muicss/mui
-	
+
 	Agron Theme
 	https://demos.creative-tim.com/argon-dashboard/index.html
 
@@ -47,7 +47,7 @@
 
 	local c = tree
 	local i, r
-	
+
 	-- tag all nodes leading to this page
 	for i, r in ipairs(request) do
 		if c.nodes and c.nodes[r] then
@@ -184,13 +184,13 @@
 			end
 		end
 	end
-	
+
 	math.randomseed(os.time())
 
 	-- Custom settings
 	local mode = 'normal'
 	local dark_css = fs.readfile('/www/luci-static/argon/css/dark.css')
-	local bar_color = '#5e72e4'
+	local bar_color = '#f90'
 	local primary, dark_primary, blur_radius, blur_radius_dark, blur_opacity
 	if fs.access('/etc/config/argon') then
 		primary = uci:get_first('argon', 'global', 'primary')
@@ -202,12 +202,12 @@
 		mode = uci:get_first('argon', 'global', 'mode')
 		bar_color = mode == 'dark' and dark_primary or primary
 	end
-	
-	
+
+
 -%>
 <!DOCTYPE html>
 <html lang="<%=luci.i18n.context.lang%>">
-	
+
 <head>
 	<meta charset="utf-8">
 	<title>

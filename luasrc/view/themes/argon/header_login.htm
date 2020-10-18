@@ -14,7 +14,7 @@
 
 	MUI:
 	https://github.com/muicss/mui
-	
+
 	Agron Theme
 	https://demos.creative-tim.com/argon-dashboard/index.html
 
@@ -31,7 +31,7 @@
 	local nutil = require "nixio.util"
 	local uci = require 'luci.model.uci'.cursor()
 	local boardinfo = util.ubus("system", "board")
-	
+
 
 	local request  = disp.context.path
 	local request2 = disp.context.request
@@ -48,14 +48,14 @@
 
 	local c = tree
 	local i, r
-	
+
 	math.randomseed(tonumber(tostring(os.time()):reverse():sub(1, 9)))
 
 	-- Custom settings
 
 	local mode = 'normal'
 	local dark_css = fs.readfile('/www/luci-static/argon/css/dark.css')
-	local bar_color = '#5e72e4'
+	local bar_color = '#f90'
 	local primary, dark_primary, blur_radius, blur_radius_dark, blur_opacity
 	if fs.access('/etc/config/argon') then
 		primary = uci:get_first('argon', 'global', 'primary')
@@ -134,4 +134,3 @@
 </head>
 
 <body class="<%- if node then %><%= striptags( node.title ) %><%- end %> <% if luci.dispatcher.context.authsession then %>logged-in<% end %> lang_<%=luci.i18n.context.lang%>  ">
-	
